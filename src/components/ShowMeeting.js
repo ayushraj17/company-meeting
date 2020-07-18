@@ -12,6 +12,7 @@ tdate =
 
 function ShowMeeting({ fetchCount, appDate }) {
 	const [counter, setCounter] = useState(0);
+	// const [monthCounter, setMonthCounter] = useState(0);
 
 	const [data, setData] = useState([]);
 
@@ -38,13 +39,13 @@ function ShowMeeting({ fetchCount, appDate }) {
 			return (
 				<div
 					key={i}
-					className=" flex p-4 mb-4 lg:mx-56  bg-gray-200  rounder-lg shadow-lg justify-between"
+					className=" flex p-4 mb-4 bg-gray-200  rounder-lg shadow-lg justify-between"
 				>
-					<div className="flex justify-around text-lg  w-24">
+					<div className="flex justify-around text-lg ">
 						<div>{meet.start_time} </div>
 						<div>{meet.end_time}</div>
 					</div>
-					<div className=" ml-56 text-sm">{meet.description}</div>
+					<div className="text-sm">{meet.description}</div>
 				</div>
 			);
 		});
@@ -61,7 +62,8 @@ function ShowMeeting({ fetchCount, appDate }) {
 			tdate.getFullYear();
 		if (appDate) {
 			tdate =
-				appDate.slice(-2) +
+				parseInt(appDate.slice(-2)) +
+				counter +
 				"/" +
 				appDate.slice(6, 7) +
 				"/" +
@@ -76,17 +78,17 @@ function ShowMeeting({ fetchCount, appDate }) {
 		return (
 			<div className="mx-56 flex justify-center align-middle mb-12 text-3xl text-blue-600">
 				<button
-					className="hover:bg-gray-300 pointer-none  mx-4 my-auto"
+					className="hover:bg-gray-300 pointer-none  mx-4 flex -mt-3"
 					onClick={() => setCounter(counter - 1)}
 				>
 					<i className="material-icons md-48">keyboard_arrow_left</i>
 				</button>
 				{date}
 				<button
-					className="hover:bg-gray-300 mx-4 my-auto"
+					className="hover:bg-gray-300 mx-4 flex -mt-3 "
 					onClick={() => setCounter(counter + 1)}
 				>
-					<i className="material-icons md-48">keyboard_arrow_right</i>
+					<i className="material-icons md-48 ">keyboard_arrow_right</i>
 				</button>
 			</div>
 		);

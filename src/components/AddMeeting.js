@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 // import Modal from "../Modal";
 import History from "../History";
 
@@ -78,7 +77,7 @@ function AddMeeting({ counter, fetchDate }) {
 			return (
 				<button
 					type="submit"
-					className=" px-6 py-1 rounded-lg cursor-not-allowed bg-blue-500 opacity-50 "
+					className=" px-6 py-3 rounded-lg cursor-not-allowed bg-blue-500 opacity-50 "
 					disabled
 					onClick={() => console.log("click")}
 				>
@@ -90,7 +89,7 @@ function AddMeeting({ counter, fetchDate }) {
 			<button
 				onClick={() => fetchDate(date)}
 				type="submit"
-				className="  px-6 py-6 rounded-lg transition mb-2 duration-500 ease-in-out bg-blue-500 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110 ..."
+				className="  px-6 py-3 rounded-lg transition mb-2 duration-500 ease-in-out bg-blue-500 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110 ..."
 			>
 				{alertShow ? "Continue" : "Save"}
 			</button>
